@@ -6618,10 +6618,12 @@ return h.ajaxPrefilter ? h.ajaxPrefilter(function(t, e, i) {
         $("#status").fadeOut(), $("#preloader").delay(350).fadeOut("slow"), $("body").delay(350).css({
             overflow: "visible"
         })
-    }), $("#form-contact").validate({
+    }),
+
+    $("#form-contact").validate({
         rules: {
-            Name: "required",
-            Email: {
+            name: "required",
+            email: {
                 required: !0,
                 email: !0
             },
@@ -6636,15 +6638,15 @@ return h.ajaxPrefilter ? h.ajaxPrefilter(function(t, e, i) {
             }
         },
         messages: {
-            Name: "Please enter your name",
-            Email: "Please enter a valid email address",
+            name: "Por favor ingresa tu nombre",
+            email: "Ingresa un correo valido",
             ContactNumber: {
-                required: "Please enter a valid contact number",
-                minlength: "Your contact number must consist of at least 9 characters"
+                required: "Por favor ingresa un numero telefonico valida",
+                minlength: "Tu numero de telefono debe de contener almenos 9 numeros"
             },
             UserMessage: {
-                required: "Please describe your queries",
-                minlength: "Your message must consist of at least 50 characters"
+                required: "Por favor escribe tu mensaje",
+                minlength: "Tu mensaje debe de contener por lo menos 50 caracteres"
             }
         },
         highlight: function(t) {
@@ -6656,7 +6658,10 @@ return h.ajaxPrefilter ? h.ajaxPrefilter(function(t, e, i) {
             t.insertAfter(e.next(".pmd-textfield-focused"))
         },
         submitHandler: function() {
-            $(".alert").slideDown(), $("form").trigger("reset"), $("#form-contact").find(".form-group").removeClass("has-error pmd-textfield-floating-label-completed")
+            $(".alert").slideDown(), $("form").trigger("reset"), $("#form-contact").find(".form-group").removeClass("has-error pmd-textfield-floating-label-completed");
+            setTimeout(function(){
+                $(".alert").slideUp();
+            },3000);
         }
     }), $("#form-reset").click(function() {
         var t = $(this).closest("form");
@@ -7301,6 +7306,7 @@ makeTextFile = function(t) {
     });
     return null !== textFile && window.URL.revokeObjectURL(textFile), textFile = window.URL.createObjectURL(e)
 },
+
 download = document.getElementById("download-theme-css");
 download.addEventListener("click", function() {
 var t = document.createElement("a");
