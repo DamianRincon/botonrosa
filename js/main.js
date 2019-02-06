@@ -1,10 +1,3 @@
-/*!
- * Propeller Amplify Theme v1.0.0 (http://pro.propeller.in/)
- * Copyright 2016-2018 Digicorp, Inc
- * License: Propeller Pro Developer License 
- * License URI: https://pro.propeller.in/propeller-pro-developer-license/ 
- */
-
 if (function(f, x) {
     var e, i, v = typeof x,
         m = f.document,
