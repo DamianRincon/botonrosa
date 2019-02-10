@@ -28,6 +28,6 @@ $('.submit').on('click', function (e) {
   user_id = uuidv4();
   //user_id = user_id ? user_id : fb.database().ref().child('contact_us').push().key;
   updates[user_id] = $('form').getFormData();
-  fb.database().ref().child('contact_us').update(updates);
+  fb.database().ref().child('contact_us/web/').update(updates);
   console.log(uuidv4());
 });
