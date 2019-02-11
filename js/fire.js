@@ -23,7 +23,7 @@ var config = {
 var fb = firebase.initializeApp(config);
 var user_id;
 $('.submit').on('click', function (e) {
-  //e.preventDefault();
+  e.preventDefault();
   var updates = {};
   user_id = uuidv4();
   //user_id = user_id ? user_id : fb.database().ref().child('contact_us').push().key;
